@@ -4,6 +4,7 @@
     vim_enter = {};
     indentscope = {};
     restore_cursor = {};
+    go_tabs = {};
   };
 
   autoCmd = [
@@ -15,38 +16,6 @@
         __raw = ''
           function()
             vim.highlight.on_yank()
-          end
-        '';
-      };
-    }
-    {
-      group = "vim_enter";
-      event = ["VimEnter"];
-      pattern = "*";
-      callback = {
-        __raw = ''
-          function()
-            vim.cmd('Startup')
-          end
-        '';
-      };
-    }
-    {
-      group = "indentscope";
-      event = ["FileType"];
-      pattern = [
-        "help"
-        "Startup"
-        "startup"
-        "neo-tree"
-        "Trouble"
-        "trouble"
-        "notify"
-      ];
-      callback = {
-        __raw = ''
-          function()
-            vim.b.miniindentscope_disable = true
           end
         '';
       };
@@ -70,6 +39,12 @@
           end
         '';
       };
+    }
+    {
+      group = "go_tabs";
+      event = ["FileType"];
+      pattern = "go";
+      command = "setlocal shiftwidth=4 tabstop=4";
     }
   ];
 }

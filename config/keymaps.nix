@@ -3,39 +3,46 @@
 
   keymaps = [
     {
-      mode = ["n" "x"];
-      key = "j";
-      action = "v:count == 0 ? 'gj' : 'j'";
+      mode = ["n"];
+      key = "<Esc>";
+      action = "<cmd>nohlsearch<CR>";
+    }
+    {
+      mode = ["n"];
+      key = "<left>";
+      action = "<cmd>echo \"Use h to move!!\"<CR>";
+    }
+    {
+      mode = ["n"];
+      key = "<right>";
+      action = "<cmd>echo \"Use l to move!!\"<CR>";
+    }
+    {
+      mode = ["n"];
+      key = "<up>";
+      action = "<cmd>echo \"Use k to move!!\"<CR>";
+    }
+    {
+      mode = ["n"];
+      key = "<down>";
+      action = "<cmd>echo \"Use j to move!!\"<CR>";
+    }
+    {
+      mode = "n";
+      key = "<C-k>";
+      action = "<C-w>k";
       options = {
-        expr = true;
-        silent = true;
+        desc = "Go to Upper Window";
+        remap = true;
       };
     }
     {
-      mode = ["n" "x"];
-      key = "<Down>";
-      action = "v:count == 0 ? 'gj' : 'j'";
+      mode = "n";
+      key = "<C-l>";
+      action = "<C-w>l";
       options = {
-        expr = true;
-        silent = true;
-      };
-    }
-    {
-      mode = ["n" "x"];
-      key = "k";
-      action = "v:count == 0 ? 'gk' : 'k'";
-      options = {
-        expr = true;
-        silent = true;
-      };
-    }
-    {
-      mode = ["n" "x"];
-      key = "<Up>";
-      action = "v:count == 0 ? 'gk' : 'k'";
-      options = {
-        expr = true;
-        silent = true;
+        desc = "Go to Right Window";
+        remap = true;
       };
     }
     {
@@ -53,24 +60,6 @@
       action = "<C-w>j";
       options = {
         desc = "Go to Lower Window";
-        remap = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<C-k>";
-      action = "<C-w>k";
-      options = {
-        desc = "Go to Upper Window";
-        remap = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<C-l>";
-      action = "<C-w>l";
-      options = {
-        desc = "Go to Right Window";
         remap = true;
       };
     }
@@ -97,75 +86,6 @@
       key = "<C-Right>";
       action = "<cmd>vertical resize +2<cr>";
       options = {desc = "Increase Window Width";};
-    }
-    {
-      mode = "n";
-      key = "<A-j>";
-      action = "<cmd>m .+1<cr>==";
-      options = {desc = "Move Down";};
-    }
-    {
-      mode = "n";
-      key = "<A-k>";
-      action = "<cmd>m .-2<cr>==";
-      options = {desc = "Move Up";};
-    }
-    {
-      mode = "i";
-      key = "<A-j>";
-      action = "<esc><cmd>m .+1<cr>==gi";
-      options = {desc = "Move Down";};
-    }
-    {
-      mode = "i";
-      key = "<A-k>";
-      action = "<esc><cmd>m .-2<cr>==gi";
-      options = {desc = "Move Up";};
-    }
-    {
-      mode = "v";
-      key = "<A-j>";
-      action = ":m '>+1<cr>gv=gv";
-      options = {desc = "Move Down";};
-    }
-    {
-      mode = "v";
-      key = "<A-k>";
-      action = ":m '<-2<cr>gv=gv";
-      options = {desc = "Move Up";};
-    }
-    {
-      mode = "i";
-      key = ";";
-      action = ";<c-g>u";
-    }
-    {
-      mode = "i";
-      key = ".";
-      action = ".<c-g>u";
-    }
-    {
-      mode = "i";
-      key = ";";
-      action = ";<c-g>u";
-    }
-    {
-      mode = ["i" "x" "n" "s"];
-      key = "<C-s>";
-      action = "<cmd>w<cr><esc>";
-      options = {desc = "Save File";};
-    }
-    {
-      mode = ["i" "n"];
-      key = "<esc>";
-      action = "<cmd>noh<cr><esc>";
-      options = {desc = "Escape and Clear hlsearch";};
-    }
-    {
-      mode = "n";
-      key = "<leader>ur";
-      action = "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>";
-      options = {desc = "Redraw / Clear hlsearch / Diff Update";};
     }
     {
       mode = "n";
@@ -220,48 +140,6 @@
         expr = true;
         desc = "Prev Search Result";
       };
-    }
-    {
-      mode = "n";
-      key = "<leader>cd";
-      action = "vim.diagnostic.open_float";
-      options = {desc = "Line Diagnostics";};
-    }
-    {
-      mode = "n";
-      key = "]d";
-      action = "diagnostic_goto(true)";
-      options = {desc = "Next Diagnostic";};
-    }
-    {
-      mode = "n";
-      key = "[d";
-      action = "diagnostic_goto(false)";
-      options = {desc = "Prev Diagnostic";};
-    }
-    {
-      mode = "n";
-      key = "]e";
-      action = "diagnostic_goto(true 'ERROR')";
-      options = {desc = "Next Error";};
-    }
-    {
-      mode = "n";
-      key = "[e";
-      action = "diagnostic_goto(false 'ERROR')";
-      options = {desc = "Prev Error";};
-    }
-    {
-      mode = "n";
-      key = "]w";
-      action = "diagnostic_goto(true 'WARN')";
-      options = {desc = "Next Warning";};
-    }
-    {
-      mode = "n";
-      key = "[w";
-      action = "diagnostic_goto(false 'WARN')";
-      options = {desc = "Prev Warning";};
     }
     {
       mode = "n";
