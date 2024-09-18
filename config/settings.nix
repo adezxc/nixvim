@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   config = {
     extraConfigLuaPre =
       # lua
@@ -35,12 +35,16 @@
       updatetime = 250;
 
       timeoutlen = 300;
-      
+
       signcolumn = "yes";
 
       list = true;
 
-      listchars = { tab = "» "; trail = "·"; nbsp = "␣"; };
+      listchars = {
+        tab = "» ";
+        trail = "·";
+        nbsp = "␣";
+      };
 
       inccommand = "split";
 

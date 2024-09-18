@@ -4,22 +4,19 @@ _: {
     settings = {
       signs = {
         add = {
-          text = " ";
+          text = "+";
         };
         change = {
-          text = " ";
+          text = "~ ";
         };
         delete = {
-          text = " ";
-        };
-        untracked = {
-          text = "";
+          text = "_";
         };
         topdelete = {
-          text = "󱂥 ";
+          text = "‾";
         };
         changedelete = {
-          text = "󱂧 ";
+          text = "~ ";
         };
       };
     };

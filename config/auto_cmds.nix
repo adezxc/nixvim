@@ -5,6 +5,7 @@
     indentscope = {};
     restore_cursor = {};
     go_tabs = {};
+    which_key = {};
   };
 
   autoCmd = [
